@@ -1,6 +1,6 @@
 # run this command for first time
 setup:
-	docker-compose build
+	# docker-compose build
 	docker-compose run --rm app bundle exec rake db:setup
 
 # build images

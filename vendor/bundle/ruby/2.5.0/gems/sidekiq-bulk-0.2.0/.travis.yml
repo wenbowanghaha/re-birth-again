@@ -1,0 +1,32 @@
+sudo: false
+language: ruby
+cache: bundler
+rvm:
+  - 2.0.0
+  - 2.1
+  - 2.2.2
+  - 2.3.0
+  - 2.4.0
+  - 2.5.0
+  - ruby-head
+gemfile:
+  - gemfiles/sidekiq_2_x.gemfile
+  - gemfiles/sidekiq_3_x.gemfile
+  - gemfiles/sidekiq_4_x.gemfile
+  - gemfiles/sidekiq_5_x.gemfile
+  - gemfiles/sidekiq_edge.gemfile
+script:
+  - bundle exec rspec
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+    - gemfile: gemfiles/sidekiq_edge.gemfile
+  exclude:
+    - rvm: 2.0.0
+      gemfile: gemfiles/sidekiq_5_x.gemfile
+    - rvm: 2.1
+      gemfile: gemfiles/sidekiq_5_x.gemfile
+    - rvm: 2.0.0
+      gemfile: gemfiles/sidekiq_edge.gemfile
+    - rvm: 2.1
+      gemfile: gemfiles/sidekiq_edge.gemfile

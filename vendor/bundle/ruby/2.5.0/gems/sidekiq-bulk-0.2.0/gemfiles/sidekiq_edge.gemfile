@@ -1,0 +1,11 @@
+source "https://rubygems.org/"
+
+# TODO: this is temporary until bundler 2.0
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
+gemspec :path => "../"
+
+gem "sidekiq", :github => "mperham/sidekiq"

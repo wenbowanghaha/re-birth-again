@@ -1,0 +1,21 @@
+current directory: /app/vendor/bundle/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
+/usr/local/bin/ruby -I /usr/local/lib/ruby/site_ruby/2.5.0 -r ./siteconf20240703-1-ech7io.rb extconf.rb
+checking for ruby/digest.h... yes
+checking for rb_str_set_len()... yes
+creating Makefile
+
+current directory: /app/vendor/bundle/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
+make "DESTDIR=" clean
+
+current directory: /app/vendor/bundle/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
+make "DESTDIR="
+compiling KeccakF-1600-reference.c
+compiling KeccakNISTInterface.c
+compiling KeccakSponge.c
+compiling displayIntermediateValues.c
+compiling sha3.c
+linking shared-object digest/sha3.so
+
+current directory: /app/vendor/bundle/ruby/2.5.0/gems/digest-sha3-1.1.0/ext/digest
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 sha3.so ./.gem.20240703-1-zlyvuz/digest
